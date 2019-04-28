@@ -10,7 +10,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 public class TestIFrame {
     private static final String URL = "https://the-internet.herokuapp.com/iframe";
-    private static final String TITLE = "The Internet";
+    private static final String LOGIN_TITLE = "The Internet";
     private static final By ELEMENT_IFRAME = By.cssSelector("iframe[id = 'mce_0_ifr']");
     private static final By TEXT_AREA = By.cssSelector("body#tinymce");
     private static final String TEXT_TO_ENTER_HELLO = "Hello ";
@@ -35,7 +35,7 @@ public class TestIFrame {
 
     @Test
     public void TextIsEnteredToIFrame() {
-        wait.until(titleIs(TITLE));
+        wait.until(titleIs(LOGIN_TITLE));
         WebElement iframe = driver.findElement(ELEMENT_IFRAME);
         driver.switchTo().frame(iframe);
         driver.findElement(TEXT_AREA).clear();
