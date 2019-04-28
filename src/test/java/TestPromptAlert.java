@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
+
 public class TestPromptAlert {
     private static final String URL = "https://the-internet.herokuapp.com/javascript_alerts";
     private static final String TITLE = "The Internet";
