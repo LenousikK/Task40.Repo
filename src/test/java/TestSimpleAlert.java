@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
@@ -31,15 +32,16 @@ public class TestSimpleAlert {
     }
 
     @Test
-    public void ClickOnSimpleAlert() {
+    public void clickOnSimpleAlert() {
         wait.until(titleIs(TITLE));
         driver.findElement(BUTTON_OPEN_ALERT).click();
         try {
             Alert alert = driver.switchTo().alert();
             String textOnAlert = alert.getText();
             alert.accept();
-            assertEquals("I am a JS Alert", textOnAlert);
-            assertEquals("You successfuly clicked an alert", driver.findElement(RESULT_MESSAGE).getText());
+            assertAll("Interaction with Simple Alert works correctly",
+                    () -> assertEquals("I am a JS Alert", textOnAlert),
+                    () -> assertEquals("You successfuly clicked an alert", driver.findElement(RESULT_MESSAGE).getText()));
         } catch (NoAlertPresentException e) {
             e.printStackTrace();
         }

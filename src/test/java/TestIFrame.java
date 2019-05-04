@@ -34,7 +34,7 @@ public class TestIFrame {
     }
 
     @Test
-    public void TextIsEnteredToIFrame() {
+    public void textIsEnteredToIFrame() {
         wait.until(titleIs(TITLE));
         WebElement iframe = driver.findElement(ELEMENT_IFRAME);
         driver.switchTo().frame(iframe);

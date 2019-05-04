@@ -29,7 +29,7 @@ public class TestConfirmAlert {
     }
 
     @Test
-    public void ConfirmAlert() {
+    public void confirmAlert() {
         wait.until(titleIs(TITLE));
         driver.findElement(BUTTON_OPEN_ALERT).click();
         try {

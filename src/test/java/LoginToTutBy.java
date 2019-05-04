@@ -43,7 +43,7 @@ public class LoginToTutBy {
     }
 
     @Test
-    public void LoginSuccessful() throws InterruptedException {
+    public void loginSuccessful() throws InterruptedException {
         wait.until(titleIs(LOGIN_TITLE));
         //Thread.sleep is unconditional and also explicit type of water
         Thread.sleep(2000);

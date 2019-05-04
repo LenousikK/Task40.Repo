@@ -31,7 +31,7 @@ public class TestPromptAlert {
     }
 
     @Test
-    public void EnterValueInPromptAlert() {
+    public void enterValueInPromptAlert() {
         wait.until(titleIs(TITLE));
         driver.findElement(BUTTON_OPEN_ALERT).click();
         try {

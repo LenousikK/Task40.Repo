@@ -37,7 +37,7 @@ public class DataDrivenLogin {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/testData.csv")
-    public void LoginSuccessful(String loginUsername, String loginPassword) {
+    public void loginSuccessful(String loginUsername, String loginPassword) {
         wait.until(titleIs(LOGIN_TITLE));
         driver.findElement(LOGIN_MENU_ITEM).click();
         driver.findElement(INPUT_LOGIN_USERNAME).sendKeys(loginUsername);
